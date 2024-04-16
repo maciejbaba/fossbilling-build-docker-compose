@@ -1,0 +1,60 @@
+{
+  "name": "fossbilling",
+  "author": "FOSSBilling Team",
+  "homepage": "https://fossbilling.org",
+  "license": "Apache License 2.0",
+  "scripts": {
+    "build": "npm run build-themes && npm run build-modules",
+    "build-themes": "npm run build-admin_default && npm run build -w huraga",
+    "build-modules": "npm run build-wysiwyg",
+    "build-huraga": "npm run build -w huraga",
+    "build-admin_default": "npm run build -w admin_default",
+    "build-wysiwyg": "npm run build -w wysiwyg",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FOSSBilling/FOSSBilling.git"
+  },
+  "issues": {
+    "url": "https://github.com/FOSSBilling/FOSSBilling/issues"
+  },
+  "dependencies": {
+    "autosize": "^6.0.1",
+    "bootstrap": "^5.3.2",
+    "flag-icons": "^7.0.0",
+    "tom-select": "^2.2.2"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^4.5.0",
+    "autoprefixer": "^10.4.16",
+    "core-js": "^3.33.3",
+    "cypress": "^13.5.1",
+    "postcss": "^8.4.31",
+    "postcss-loader": "^7.3.3",
+    "sass": "^1.69.5",
+    "sass-loader": "^14.0.0",
+    "svg-sprite-loader": "^6.0.11",
+    "svgo-loader": "^4.0.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "workspaces": [
+    "src/themes/huraga",
+    "src/themes/admin_default",
+    "src/modules/Wysiwyg"
+  ],
+  "config": {
+    "platform": {
+      "php": "8.1"
+    }
+  },
+  "engines": {
+    "npm": ">=9"
+  },
+  "overrides": {
+    "postcss": "^8.4.31",
+    "@melloware/coloris": "^0.23.0",
+    "imask": "^7.1.3"
+  }
+}

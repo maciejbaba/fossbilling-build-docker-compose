@@ -1,0 +1,77 @@
+# General.
+api:
+  - any:
+    - changed-files:
+      - any-glob-to-any-file: ["src/library/Api/*", "src/modules/**/Api/*"]
+
+installer:
+  - any:
+    - changed-files:
+      - any-glob-to-any-file: ["src/install/**/*"]
+
+library:
+  - any:
+    - changed-files:
+      - all-globs-to-any-file: ["src/library/**/*", "!src/library/Payment/Adapter/*", "!src/library/Registrar/Adapter/*", "!src/library/Server/Manager/*",]
+
+modules:
+  - any:
+    - changed-files:
+      - any-glob-to-any-file: ["src/modules/**/**/*"]
+
+# Extensions.
+extensions:
+  - any:
+    - changed-files:
+      - any-glob-to-any-file: ["src/library/Payment/Adapter/*", "src/library/Registrar/Adapter/*", "src/library/Server/Manager/*",]
+
+payment-gateways:
+  - any:
+    - changed-files:
+      - any-glob-to-any-file: ["src/library/Payment/Adapter/*"]
+
+domain-registrars:
+  - any:
+    - changed-files:
+      - any-glob-to-any-file: ["src/library/Registrar/Adapter/*"]
+
+server-managers:
+  - any:
+    - changed-files:
+      - any-glob-to-any-file: ["src/library/Server/Manager/*"]
+
+# Front-end/Themes.
+client-area:
+  - any:
+    - changed-files:
+    - all-globs-to-any-file: ["!src/themes/admin_*/**/*", "src/modules/**/html_client/*"]
+    - all-globs-to-any-file: ["!src/themes/admin_*/**/*", "src/themes/**/*"]
+
+admin-panel:
+  - any:
+    - changed-files:
+      - any-glob-to-any-file: ["src/themes/admin_*/**/*", "src/modules/**/html_admin/*"]
+
+# Github Actions/Config.
+github-config:
+  - any:
+    - changed-files:
+      - any-glob-to-any-file: [".github/**/*"]
+
+# Package Management.
+composer:
+  - any:
+    - changed-files:
+      - any-glob-to-any-file: ["composer.json", "composer.lock"]
+
+npm:
+  - any:
+    - changed-files:
+      - any-glob-to-any-file: ["package.json", "package-lock.json"]
+
+# Tests/CI.
+tests/CI:
+  - any:
+    - changed-files:
+      - any-glob-to-any-file: ["tests-legacy/**/*"]
+      - any-glob-to-any-file: ["tests/**/*"]
